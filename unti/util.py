@@ -5,13 +5,13 @@ from selenium.webdriver.common.by import By
 
 
 def get_element(driver, *loc):
-    e = driver.find_element(*loc)
-    return e
+    return driver.find_element(*loc)
 
 
 if __name__ == '__main__':
     driver = webdriver.Firefox()
     driver.get('https://www.baidu.com')
-    time.sleep(1)
-    get_element(driver, By.ID, 'kw').sendkeys('自动化')
+    get_element(driver, By.ID, 'kw').send_keys('自动化')
     get_element(driver, By.ID, 'su').click()
+    time.sleep(1)
+    driver.quit()
