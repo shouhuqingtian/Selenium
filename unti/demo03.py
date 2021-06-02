@@ -32,5 +32,5 @@ class TestCase(object):
 
 if __name__ == '__main__':
     case = TestCase()
-    # case.test_prop()
-    case.test_method()
+    case.test_prop()
+    # case.test_method()
