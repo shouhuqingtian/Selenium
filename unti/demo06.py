@@ -26,9 +26,13 @@ class TestCase(object):
     def test_radio(self):
         lst = self.driver.find_elements_by_name('gender')
         lst[1].click()
+        self.driver.find_element_by_xpath('/html/body/form/input[5]').click()  # '//input[@value="百度一下"]'
+        self.driver.switch_to.alert.accept()
+        time.sleep(1)
+        self.driver.quit()
 
 
 if __name__ == '__main__':
     case = TestCase()
     # case.test_checkbox()
-    case.test_redio()
+    case.test_radio()
