@@ -24,6 +24,7 @@ class TestCase(object):
     def test_wait(self):
         wait = WebDriverWait(self.driver, 2)
         wait.until(EC.title_contains('百度一下'))
+        print('ok')
         self.driver.find_element_by_id('kw').send_keys('selenium')
         self.driver.find_element_by_id('su').click()
 
