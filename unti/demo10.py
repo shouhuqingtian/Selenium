@@ -18,17 +18,21 @@ class TestCase(object):
         self.driver.get('https://www.baidu.com')
 
     def test(self):
-        self.driver.find_element_by_id('btn').click()
+        # self.driver.find_element_by_id('btn').click()
         # 显示等待
         # time.sleep(4)
-        wait = WebDriverWait(self.driver, 5)
+        wait = WebDriverWait(self.driver, 3)
         # wait.until(EC.title_contains(''))
         # print((EC.text_to_be_present_in_element('id', 'id2').text, 'id2'))
 
         # wait.until(EC.text_to_be_present_in_element('id', 'id2'), 1)
-        print(WebDriverWait(self.driver, 5).until(text_to_be_present_in_element('id', 'id2'), 1))
+        wait.until(EC.text_to_be_present_in_element((By.ID, 'su'), '百度一下'))
         # print(EC.text_to_be_present_in_element('id', 'id2').text)
         # print(self.driver.find_element_by_id('id2').text)
+        locator = ('class name', 'mnav')
+        text = '新闻'
+        # wait.until(EC.text_to_be_present_in_element(locator, text)(self.driver))
+        # result = EC.text_to_be_present_in_element(locator, text)(self.driver)
         print('ok')
 
 
